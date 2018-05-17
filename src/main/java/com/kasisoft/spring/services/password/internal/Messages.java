@@ -1,4 +1,4 @@
-package com.kasisoft.cdi.services.password.internal;
+package com.kasisoft.spring.services.password.internal;
 
 import com.kasisoft.libs.common.i18n.*;
 

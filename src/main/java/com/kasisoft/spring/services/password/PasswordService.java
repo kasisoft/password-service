@@ -1,32 +1,29 @@
-package com.kasisoft.cdi.services.password;
+package com.kasisoft.spring.services.password;
 
-import static  com.kasisoft.cdi.services.password.internal.Messages.*;
+import static com.kasisoft.spring.services.password.internal.Messages.*;
 
 import com.kasisoft.libs.common.constants.*;
 
-import org.apache.commons.codec.binary.*;
+import org.springframework.stereotype.*;
 
 import javax.annotation.*;
-import javax.ejb.*;
-import javax.ejb.Singleton;
-import javax.inject.*;
 
-import lombok.extern.slf4j.*;
+import java.util.*;
 
 import lombok.experimental.*;
 
 import lombok.*;
+import lombok.extern.log4j.*;
 
 /**
  * Service implementation which is used to deal with passwords.
  * 
  * @author daniel.kasmeroglu@kasisoft.net
  */
-@Named @Singleton
-@Slf4j
+@Service
+@Log4j2
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @ToString(of = {"digest", "saltLength"})
-@ConcurrencyManagement(ConcurrencyManagementType.BEAN)
 public class PasswordService {
 
   @Getter @Setter
@@ -70,7 +67,7 @@ public class PasswordService {
     for( int i = 0; i < bytes.length; i++ ) {
       bytes[i] = (byte) (((long) (Math.random() * System.currentTimeMillis())) % 256);
     }
-    return Base64.encodeBase64String( bytes );
+    return Base64.getEncoder().encodeToString( bytes );
   }
 
   /**
@@ -92,7 +89,7 @@ public class PasswordService {
     String data     = String.format( "%s%s", prepend ? salt : password, prepend ? password : salt );
     byte[] asbytes  = data.getBytes();
 
-    return Base64.encodeBase64String( digester.digest( count, asbytes ) );
+    return Base64.getEncoder().encodeToString( digester.digest( count, asbytes ) );
 
   }
 

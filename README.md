@@ -1,7 +1,3 @@
-# DISCONTINUED
-# DISCONTINUED
-# DISCONTINUED
-
 # Purpose
 
 
@@ -10,8 +6,10 @@ This library allows to generate hashes for passwords.
 
 # Infos
 
-* [eMail: daniel.kasmeroglu@kasisoft.net](mailto:daniel.kasmeroglu@kasisoft.net)
-* [GIT](https://kasisoft.com/bitbucket/projects/GRAV/repos/password-service)
+* [daniel.kasmeroglu@kasisoft.net](mailto:daniel.kasmeroglu@kasisoft.net)
+* [Jenkins](https://kasisoft.com/jenkins/view/spring/job/spring.com.kasisoft.spring.password-service)
+* [JIRA](https://kasisoft.com/jira/projects/SPRINGPWD/)
+* [GIT](https://kasisoft.com/bitbucket/projects/SPRING/repos/password-service)
 
 
 # Development Setup
@@ -31,8 +29,8 @@ I assume that you're familiar with Maven. If not I suggest to visit the followin
 ### Releases
 
      <dependency>
-         <groupId>com.kasisoft.cdi</groupId>
-        <artifactId>password-service</artifactId>
+         <groupId>com.kasisoft</groupId>
+        <artifactId>com.kasisoft.spring.password-service</artifactId>
         <version>0.1</version>
      </dependency>
 
@@ -42,8 +40,8 @@ I assume that you're familiar with Maven. If not I suggest to visit the followin
 Snapshots can be used while accessing a dedicated maven repository. Your POM needs the following settings:
 
      <dependency>
-       <groupId>com.kasisoft.cdi</groupId>
-       <artifactId>password-service</artifactId>
+       <groupId>com.kasisoft</groupId>
+       <artifactId>com.kasisoft.spring.password-service</artifactId>
        <version>0.1-SNAPSHOT</version>
      </dependency>
      
@@ -94,7 +92,7 @@ Test wether a password is valid or not:
 
 MIT License
 
-Copyright (c) 2017 Daniel Kasmeroglu (Kasisoft)
+Copyright (c) 2018 Daniel Kasmeroglu (Kasisoft)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
